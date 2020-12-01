@@ -1,0 +1,695 @@
+<html>
+
+<body>
+    <script>function draw() {
+  document.querySelectorAll(".cell").forEach((cell) => {
+    cell.style.setProperty(
+      "--path",
+      "var(--path" + (Math.floor(Math.random() * 9) + 1) + ")"
+    );
+    for (j = 1; j < 4; j++) {
+      cell.classList.remove("cell" + j);
+    }
+    cell.classList.add("cell" + Math.floor(Math.random() * 3));
+  });
+}
+
+draw();
+
+setInterval(function (event) {
+  draw();
+}, 3000);
+
+document.addEventListener(
+  "click",
+  function (event) {
+    document.body.classList.toggle("dark");
+  },
+  false
+);
+
+</script>
+    <style>
+    
+ body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100vw;
+  background: #63ffd9;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  overflow: hidden;
+  --path:path("M 0 400 Q 110 400 110 330 L 110 130 Q 110 60 170 60 Q 230 60 230 130 L 230 590 Q 230 660 290 660 Q 350 660 350 590 L 350 290 Q 350 220 410 220 Q 470 220 470 290 L 470 500 Q 470 570 530 570 Q 590 570 590 500 L 590 160 Q 590 90 650 90 Q 710 90 710 160 L 710 320 Q 710 400 800 400 L 800 800 L 0 800 L 0 400 ");
+  --path1:path("M 0 400 Q 110 400 110 330 L 110 130 Q 110 60 170 60 Q 230 60 230 130 L 230 590 Q 230 660 290 660 Q 350 660 350 590 L 350 290 Q 350 220 410 220 Q 470 220 470 290 L 470 500 Q 470 570 530 570 Q 590 570 590 500 L 590 160 Q 590 90 650 90 Q 710 90 710 160 L 710 320 Q 710 400 800 400 L 800 800 L 0 800 L 0 400 ");
+  --path2: path("M 0 400 Q 110 400 110 330 L 110 260 Q 110 190 170 190 Q 230 190 230 260 L 230 360 Q 230 440 290 440 Q 350 440 350 360 L 350 290 Q 350 220 410 220 Q 470 220 470 290 L 470 560 Q 470 640 530 640 Q 590 640 590 560 L 590 140 Q 590 70 650 70 Q 710 70 710 140 L 710 320 Q 710 400 800 400 L 800 800 L 0 800 L 0 400 ");
+  --path3: path("M 0 400 Q 110 400 110 400 L 140 400 Q 170 400 170 400 Q 200 400 230 400 L 260 400 Q 280 400 300 400 Q 350 400 350 330 L 350 290 Q 350 220 410 220 Q 470 220 470 290 L 470 560 Q 470 640 530 640 Q 590 640 590 560 L 590 140 Q 590 70 650 70 Q 710 70 710 140 L 710 320 Q 710 400 800 400 L 800 800 L 0 800 L 0 400 ");
+  --path4: path("M 0 400 Q 80 400 80 470 L 80 620 Q 80 700 140 700 Q 200 700 200 620 L 200 480 Q 200 390 300 400 Q 350 400 350 330 L 350 290 Q 350 220 410 220 Q 470 220 450 220 L 490 220 Q 510 220 530 220 Q 590 220 590 160 L 590 140 Q 590 70 650 70 Q 710 70 710 140 L 710 320 Q 710 400 800 400 L 800 800 L 0 800 L 0 400 ");
+  --path5: path("M 0 400 Q 80 400 80 470 L 80 620 Q 80 700 170 700 Q 260 700 260 620 L 260 520 Q 260 470 260 290 Q 260 220 330 220 L 370 220 Q 390 220 410 220 Q 470 220 450 220 L 490 220 Q 510 220 530 220 Q 580 220 590 280 L 590 500 Q 590 580 650 580 Q 710 580 710 500 L 710 470 Q 710 400 800 400 L 800 800 L 0 800 L 0 40");
+  --path6: path("M 0 400 Q 80 400 80 470 L 80 620 Q 80 700 170 700 Q 260 700 260 620 L 260 520 Q 260 470 260 290 Q 260 220 330 220 L 330 220 Q 390 220 390 110 Q 390 50 450 50 L 520 50 Q 580 50 580 110 Q 580 220 580 280 L 580 500 Q 580 580 650 580 Q 710 580 710 500 L 710 470 Q 710 400 800 400 L 800 800 L 0 800 L 0 400 ");
+  --path7:path("M 0 400 Q 80 400 80 400 L 120 400 Q 140 400 160 400 Q 190 400 210 400 L 240 400 Q 260 400 270 400 Q 290 400 310 400 L 340 400 Q 390 400 430 400 Q 450 400 470 400 L 520 400 Q 540 400 550 400 Q 570 400 580 400 L 610 400 Q 650 400 680 400 Q 700 400 710 400 L 730 400 Q 710 400 800 400 L 800 800 L 0 800 L 0 400 ");
+  --path8:path("M 0 400 Q 80 400 80 400 L 120 400 Q 140 400 160 400 Q 190 400 210 400 L 240 400 Q 260 400 270 400 Q 290 400 310 400 L 340 400 Q 390 400 430 400 Q 450 400 470 400 L 520 400 Q 540 400 550 400 Q 570 400 580 400 L 610 400 Q 650 400 680 400 Q 700 400 710 400 L 730 400 Q 710 400 800 400 L 800 800 L 0 800 L 0 400 ");
+  --path9:path("M 0 400 Q 80 400 80 400 L 120 400 Q 140 400 160 400 Q 190 400 210 400 L 240 400 Q 260 400 270 400 Q 290 400 310 400 L 340 400 Q 390 400 430 400 Q 450 400 470 400 L 520 400 Q 540 400 550 400 Q 570 400 580 400 L 610 400 Q 650 400 680 400 Q 700 400 710 400 L 730 400 Q 710 400 800 400 L 800 800 L 0 800 L 0 400 ");
+  -webkit-perspective: 800px;
+          perspective: 800px;
+  --color1: #422B38;
+  --color2: #7F415C;
+  --color3: #B83F6C;
+  --color4: #EB2E5C;
+  --color5: #FD6765;
+  --color6: #F89275;
+  --color7: #FDDA92;
+}
+body.dark {
+  background: #00634b;
+}
+body.dark:before, body.dark:after {
+  -webkit-filter: brightness(0.25) hue-rotate(15deg) saturate(5);
+          filter: brightness(0.25) hue-rotate(15deg) saturate(5);
+}
+body.dark #wrap .row:before, body.dark #wrap:hover .row:before {
+  background: #00634b;
+  box-shadow: inset -50px -50px 0 0 rgba(245, 240, 192, 0.25);
+  -webkit-transition: 0.3s ease-in-out, -webkit-transform 1s ease-in-out;
+  transition: 0.3s ease-in-out, -webkit-transform 1s ease-in-out;
+  transition: 0.3s ease-in-out, transform 1s ease-in-out;
+  transition: 0.3s ease-in-out, transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+  -webkit-transform: scale(0.4) translateY(-250px) translateX(500px);
+          transform: scale(0.4) translateY(-250px) translateX(500px);
+}
+body.dark .cell {
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
+}
+body span {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  text-align: center;
+  left: 0;
+  z-index: 10;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
+}
+body:before, body:after {
+  pointer-events: none;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+body:after {
+  content: '';
+  position: absolute;
+  width: 440px;
+  height: 440px;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 0 40px #fcfffe;
+  z-index: 9;
+  border-radius: 10px;
+}
+body:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 8;
+  background: radial-gradient(circle at center, #fcfffe 300px, #c9fff2);
+  -webkit-mask: linear-gradient(to bottom, #000 calc(50% - 225px), transparent calc(50% - 225px), transparent calc(50% + 225px), #000 calc(50% + 225px)), linear-gradient(to right, #000 calc(50% - 225px), transparent calc(50% - 225px), transparent calc(50% + 225px), #000 calc(50% + 225px));
+          mask: linear-gradient(to bottom, #000 calc(50% - 225px), transparent calc(50% - 225px), transparent calc(50% + 225px), #000 calc(50% + 225px)), linear-gradient(to right, #000 calc(50% - 225px), transparent calc(50% - 225px), transparent calc(50% + 225px), #000 calc(50% + 225px));
+}
+body #wrap:hover {
+  -webkit-transform: scale(0.5) scaleX(1.25) rotateX(50deg);
+          transform: scale(0.5) scaleX(1.25) rotateX(50deg);
+}
+body #wrap:hover .row:nth-of-type(1) {
+  -webkit-transform: translateY(0px) rotateX(-50deg) skewY(-2.5deg);
+          transform: translateY(0px) rotateX(-50deg) skewY(-2.5deg);
+}
+body #wrap:hover .row:nth-of-type(1):nth-of-type(odd) {
+  -webkit-transform: translateY(0px) rotateX(-50deg) skewY(2.5deg);
+          transform: translateY(0px) rotateX(-50deg) skewY(2.5deg);
+}
+body #wrap:hover .row:nth-of-type(2) {
+  -webkit-transform: translateY(5px) rotateX(-50deg) skewY(-2.5deg);
+          transform: translateY(5px) rotateX(-50deg) skewY(-2.5deg);
+}
+body #wrap:hover .row:nth-of-type(2):nth-of-type(odd) {
+  -webkit-transform: translateY(5px) rotateX(-50deg) skewY(2.5deg);
+          transform: translateY(5px) rotateX(-50deg) skewY(2.5deg);
+}
+body #wrap:hover .row:nth-of-type(3) {
+  -webkit-transform: translateY(10px) rotateX(-50deg) skewY(-2.5deg);
+          transform: translateY(10px) rotateX(-50deg) skewY(-2.5deg);
+}
+body #wrap:hover .row:nth-of-type(3):nth-of-type(odd) {
+  -webkit-transform: translateY(10px) rotateX(-50deg) skewY(2.5deg);
+          transform: translateY(10px) rotateX(-50deg) skewY(2.5deg);
+}
+body #wrap:hover .row:nth-of-type(4) {
+  -webkit-transform: translateY(15px) rotateX(-50deg) skewY(-2.5deg);
+          transform: translateY(15px) rotateX(-50deg) skewY(-2.5deg);
+}
+body #wrap:hover .row:nth-of-type(4):nth-of-type(odd) {
+  -webkit-transform: translateY(15px) rotateX(-50deg) skewY(2.5deg);
+          transform: translateY(15px) rotateX(-50deg) skewY(2.5deg);
+}
+body #wrap:hover .row:nth-of-type(5) {
+  -webkit-transform: translateY(20px) rotateX(-50deg) skewY(-2.5deg);
+          transform: translateY(20px) rotateX(-50deg) skewY(-2.5deg);
+}
+body #wrap:hover .row:nth-of-type(5):nth-of-type(odd) {
+  -webkit-transform: translateY(20px) rotateX(-50deg) skewY(2.5deg);
+          transform: translateY(20px) rotateX(-50deg) skewY(2.5deg);
+}
+body #wrap:hover .row:nth-of-type(6) {
+  -webkit-transform: translateY(25px) rotateX(-50deg) skewY(-2.5deg);
+          transform: translateY(25px) rotateX(-50deg) skewY(-2.5deg);
+}
+body #wrap:hover .row:nth-of-type(6):nth-of-type(odd) {
+  -webkit-transform: translateY(25px) rotateX(-50deg) skewY(2.5deg);
+          transform: translateY(25px) rotateX(-50deg) skewY(2.5deg);
+}
+body #wrap:hover .row:before {
+  top: -200px;
+  box-shadow: 0 0 0 40px rgba(245, 240, 192, 0.25), 0 0 1000px 100px rgba(0, 0, 0, 0.15);
+  -webkit-transition: top 2s ease-in-out, box-shadow 2s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: top 2s ease-in-out, box-shadow 2s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: top 2s ease-in-out, box-shadow 2s ease-in-out, transform 0.3s ease-in-out;
+  transition: top 2s ease-in-out, box-shadow 2s ease-in-out, transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+body #wrap {
+  cursor: pointer;
+  width: 800px;
+  height: 800px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: scale(0.6) rotateX(0deg) translateY(40px);
+          transform: scale(0.6) rotateX(0deg) translateY(40px);
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.25);
+}
+body #wrap .row {
+  display: grid;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  grid-template-columns: repeat(6, 1fr);
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transform: rotateX(0deg) translateY(-10px) skewY(-2.5deg);
+          transform: rotateX(0deg) translateY(-10px) skewY(-2.5deg);
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+body #wrap .row:nth-of-type(even) {
+  -webkit-transform: rotateX(0deg) translateY(-10px) skewY(2.5deg);
+          transform: rotateX(0deg) translateY(-10px) skewY(2.5deg);
+}
+body #wrap .row:before {
+  position: absolute;
+  width: calc(100% + 50px);
+  background: rgba(245, 240, 192, 0.75);
+  width: 200px;
+  height: 250px;
+  border-radius: 100%;
+  left: calc(50% - 100px);
+  top: 100%;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  -webkit-transform: translateZ(-10px);
+          transform: translateZ(-10px);
+}
+body #wrap .row:first-of-type:before {
+  content: '';
+}
+body #wrap .row:nth-of-type(1) .cell {
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--color7)), to(var(--color6)));
+  background: linear-gradient(to bottom, var(--color7), var(--color6));
+  box-shadow: 0 50px 0 var(--color6);
+  -webkit-transition: -webkit-filter 0.2s ease-in-out;
+  transition: -webkit-filter 0.2s ease-in-out;
+  transition: filter 0.2s ease-in-out;
+  transition: filter 0.2s ease-in-out, -webkit-filter 0.2s ease-in-out;
+}
+body #wrap .row:nth-of-type(1) .cell:before, body #wrap .row:nth-of-type(1) .cell:after {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(33.333%, var(--color7)), to(var(--color6)));
+  background: linear-gradient(to bottom, var(--color7) 33.333%, var(--color6));
+}
+body #wrap .row:nth-of-type(1) .cell .inner {
+  -webkit-transition-delay: 0.0833333333s;
+          transition-delay: 0.0833333333s;
+}
+body #wrap .row:nth-of-type(1) .cell svg path {
+  fill: var(--color7);
+  -webkit-transition-delay: 0.0833333333s;
+          transition-delay: 0.0833333333s;
+}
+body #wrap .row:nth-of-type(2) .cell {
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--color6)), to(var(--color5)));
+  background: linear-gradient(to bottom, var(--color6), var(--color5));
+  box-shadow: 0 50px 0 var(--color5);
+  -webkit-transition: -webkit-filter 0.2s ease-in-out;
+  transition: -webkit-filter 0.2s ease-in-out;
+  transition: filter 0.2s ease-in-out;
+  transition: filter 0.2s ease-in-out, -webkit-filter 0.2s ease-in-out;
+}
+body #wrap .row:nth-of-type(2) .cell:before, body #wrap .row:nth-of-type(2) .cell:after {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(33.333%, var(--color6)), to(var(--color5)));
+  background: linear-gradient(to bottom, var(--color6) 33.333%, var(--color5));
+}
+body #wrap .row:nth-of-type(2) .cell .inner {
+  -webkit-transition-delay: 0.1666666667s;
+          transition-delay: 0.1666666667s;
+}
+body #wrap .row:nth-of-type(2) .cell svg path {
+  fill: var(--color6);
+  -webkit-transition-delay: 0.1666666667s;
+          transition-delay: 0.1666666667s;
+}
+body #wrap .row:nth-of-type(3) .cell {
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--color5)), to(var(--color4)));
+  background: linear-gradient(to bottom, var(--color5), var(--color4));
+  box-shadow: 0 50px 0 var(--color4);
+  -webkit-transition: -webkit-filter 0.2s ease-in-out;
+  transition: -webkit-filter 0.2s ease-in-out;
+  transition: filter 0.2s ease-in-out;
+  transition: filter 0.2s ease-in-out, -webkit-filter 0.2s ease-in-out;
+}
+body #wrap .row:nth-of-type(3) .cell:before, body #wrap .row:nth-of-type(3) .cell:after {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(33.333%, var(--color5)), to(var(--color4)));
+  background: linear-gradient(to bottom, var(--color5) 33.333%, var(--color4));
+}
+body #wrap .row:nth-of-type(3) .cell .inner {
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+}
+body #wrap .row:nth-of-type(3) .cell svg path {
+  fill: var(--color5);
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+}
+body #wrap .row:nth-of-type(4) .cell {
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--color4)), to(var(--color3)));
+  background: linear-gradient(to bottom, var(--color4), var(--color3));
+  box-shadow: 0 50px 0 var(--color3);
+  -webkit-transition: -webkit-filter 0.2s ease-in-out;
+  transition: -webkit-filter 0.2s ease-in-out;
+  transition: filter 0.2s ease-in-out;
+  transition: filter 0.2s ease-in-out, -webkit-filter 0.2s ease-in-out;
+}
+body #wrap .row:nth-of-type(4) .cell:before, body #wrap .row:nth-of-type(4) .cell:after {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(33.333%, var(--color4)), to(var(--color3)));
+  background: linear-gradient(to bottom, var(--color4) 33.333%, var(--color3));
+}
+body #wrap .row:nth-of-type(4) .cell .inner {
+  -webkit-transition-delay: 0.3333333333s;
+          transition-delay: 0.3333333333s;
+}
+body #wrap .row:nth-of-type(4) .cell svg path {
+  fill: var(--color4);
+  -webkit-transition-delay: 0.3333333333s;
+          transition-delay: 0.3333333333s;
+}
+body #wrap .row:nth-of-type(5) .cell {
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--color3)), to(var(--color2)));
+  background: linear-gradient(to bottom, var(--color3), var(--color2));
+  box-shadow: 0 50px 0 var(--color2);
+  -webkit-transition: -webkit-filter 0.2s ease-in-out;
+  transition: -webkit-filter 0.2s ease-in-out;
+  transition: filter 0.2s ease-in-out;
+  transition: filter 0.2s ease-in-out, -webkit-filter 0.2s ease-in-out;
+}
+body #wrap .row:nth-of-type(5) .cell:before, body #wrap .row:nth-of-type(5) .cell:after {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(33.333%, var(--color3)), to(var(--color2)));
+  background: linear-gradient(to bottom, var(--color3) 33.333%, var(--color2));
+}
+body #wrap .row:nth-of-type(5) .cell .inner {
+  -webkit-transition-delay: 0.4166666667s;
+          transition-delay: 0.4166666667s;
+}
+body #wrap .row:nth-of-type(5) .cell svg path {
+  fill: var(--color3);
+  -webkit-transition-delay: 0.4166666667s;
+          transition-delay: 0.4166666667s;
+}
+body #wrap .row:nth-of-type(6) .cell {
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--color2)), to(var(--color1)));
+  background: linear-gradient(to bottom, var(--color2), var(--color1));
+  box-shadow: 0 50px 0 var(--color1);
+  -webkit-transition: -webkit-filter 0.2s ease-in-out;
+  transition: -webkit-filter 0.2s ease-in-out;
+  transition: filter 0.2s ease-in-out;
+  transition: filter 0.2s ease-in-out, -webkit-filter 0.2s ease-in-out;
+}
+body #wrap .row:nth-of-type(6) .cell:before, body #wrap .row:nth-of-type(6) .cell:after {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(33.333%, var(--color2)), to(var(--color1)));
+  background: linear-gradient(to bottom, var(--color2) 33.333%, var(--color1));
+}
+body #wrap .row:nth-of-type(6) .cell .inner {
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+body #wrap .row:nth-of-type(6) .cell svg path {
+  fill: var(--color2);
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+body #wrap .cell {
+  position: relative;
+  z-index: 2;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform-origin: 50% 200%;
+          transform-origin: 50% 200%;
+  margin: 0 -1px;
+}
+body #wrap .cell:before, body #wrap .cell:after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: calc(150% - 1px);
+  top: calc(-50% + 1px);
+  left: -24px;
+  border-radius: 10px 0 0 10px;
+}
+body #wrap .cell:after {
+  left: auto;
+  right: -24px;
+  border-radius: 0 10px 10px 0;
+}
+body #wrap .cell.cell1 .inner {
+  -webkit-transform: scaleX(2);
+          transform: scaleX(2);
+  height: calc(100% + 1px);
+}
+body #wrap .cell .inner {
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: -100%;
+  left: 0;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+body #wrap svg {
+  position: absolute;
+  width: 107.5%;
+  height: 107.5%;
+  left: -3.25%;
+  top: -3.25%;
+  z-index: -1;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+body #wrap svg path {
+  fill: #ccc;
+  stroke-linecap: rounded;
+  d: var(--path);
+  -webkit-transition: d 0.3s ease-in-out;
+  transition: d 0.3s ease-in-out;
+}
+</style>
+
+<div id='wrap'>
+  <div class='row'>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+    <div class='cell'>
+      <div class='inner'>
+        <svg data-name='Layer 1' viewbox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'>
+          <path class='squig' d='M 0 400 Q 120 400 120 500 L 120 660 Q 120 760 180 760 Q 240 760 240 660 L 240 140 Q 240 40 300 40 Q 360 40 360 140 L 360 660 Q 360 760 420 760 Q 480 760 480 660 L 480 140 Q 480 40 540 40 Q 600 40 600 140 L 600 660 Q 600 760 660 760 Q 720 760 720 660 L 720 480 Q 720 400 800 400 '></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+<span></span>
+
+</body></html>
